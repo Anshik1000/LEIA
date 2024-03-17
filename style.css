@@ -1,7 +1,7 @@
 :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
     --primary: #15F5BA;
-    --primaryLight: #F0F3FF;
+    --primaryLight: #15F5BA;
     --secondary: #211951;
     --secondaryLight: #836FFF;
     --headerColor: #1a1a1a;
@@ -71,13 +71,13 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background-color: #d2691e; /* orange-brown color */
+    background-color: #15F5BA; /* lime color */
     border-radius: 10px; /* round corners */
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #a0522d; /* darker shade on hover */
+    background-color: #0fb689; /* darker shade on hover */
 }
 
 
@@ -92,7 +92,7 @@ body {
     right: 20px;
     z-index: 9999;
     padding: 10px 20px;
-    background-color: #d2691e; /* Orange-brown color */
+    background-color: #15F5BA; /* lime color */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -100,7 +100,7 @@ body {
 }
 
 .scroll-top-btn:hover {
-    background-color: #a0522d; /* Darker shade of orange-brown on hover */
+    background-color: #0fb689; /* Darker shade of lime on hover */
 }
 
   
