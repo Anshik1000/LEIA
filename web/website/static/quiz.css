@@ -1,0 +1,51 @@
+.type{
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding:30px;
+    padding-bottom: 200px; 
+    border-color: #222;
+}
+
+.quiz{
+    padding:20px 0;
+
+}
+
+.btn{
+    background: white;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.btn:hover{
+    background-color: #15F5BA;
+    color:#fff;
+}
+#next-btn,#sign-up{
+    
+    background-color:#15F5BA;
+    color:#fff;
+    font-weight: 500;
+    width:150px;
+    border:0;
+    padding: 10px;
+    margin:20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+.selected{
+    background-color: #15F5BA;
+    color:#fff;
+}
