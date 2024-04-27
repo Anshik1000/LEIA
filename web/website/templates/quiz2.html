@@ -52,7 +52,7 @@
                </div>
 
         </div>
-        <button id="sign-up">Sign-up</button>
+        <button id="sign-up" class="cs-button-solid cs-submit">Sign-up</button>
     </div>
 
 <!-- ============================================ -->
@@ -68,10 +68,10 @@
             <div class="cs-contact-group">
                 <picture class="cs-picture">
                     <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/group.jpg">
+                    <source media="(max-width: 600px)" srcset="{{url_for('static',filename='assets/signupleia.jpg')}}">
                     <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/group.jpg">
-                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/group.jpg" alt="people" width="630" height="300">
+                    <source media="(min-width: 601px)" srcset="{{url_for('static',filename='assets/signupleia.jpg')}}">
+                    <img loading="lazy" decoding="async" src="{{url_for('static',filename='assets/signupleia.jpg')}}" alt="people" width="630" height="300">
                 </picture>
                 <p class="cs-contact-text">
                     There are many variations of passages of available but the majority have suffered alteration in some form, by injected randomized words even slightly believable.
@@ -103,7 +103,7 @@
             <form class="cs-form" id="cs-form-1150" name="Contact Form" method="post" action="/quiz">
                 <label class="cs-label">
                     Username
-                    <input class="cs-input" required type="text" id="name-1150" name="username" placeholder="username">
+                    <input class="cs-input" required type="text" id="name-1150" name="username" placeholder="Username">
                 </label>
                 <label class="cs-label cs-email">
                     Email
