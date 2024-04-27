@@ -49,3 +49,12 @@
     background-color: #15F5BA;
     color:#fff;
 }
+
+.learnertype{
+    display: none;
+
+}
+
+#lsignup{
+    display: none;
+}

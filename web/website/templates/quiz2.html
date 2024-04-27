@@ -3,8 +3,8 @@
 {%extends "layout.html"%}
     {%block body %} 
     <br>
-    <div class="type">
-        <h1 class="cs-title">Learner type Quiz</h1>
+    <div class="type" id="quiz">
+        <h1 class="cs-title" id="result">Learner type Quiz</h1>
         <div class="quiz">
             <h2 id="question">Question goes here</h2>
             <div id="answer-buttons">
@@ -14,12 +14,123 @@
                 <button class="btn">Answer4</button>
             </div>
             <button id="next-btn">Next</button>
-           <a id="sign-up" style="text-decoration: none;" href="/signup">Sign-up</a>
-        </div>
-        
-      
 
+            <div id="turtle" class="learnertype">
+                <picture class="cs-image"  aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="{{url_for('static',filename='assets/Learner Types/Turtle.png')}}">
+                    <source media="(min-width: 601px)" srcset="{{url_for('static',filename='assets/Learner Types/Turtle.png')}}">
+                    <img loading="lazy" decoding="async" src="{{url_for('static',filename='assets/Learner Types/Turtle.png')}}" alt="library" width="600" height="400">
+                </picture>
+                <h3 class="cs-text">They dive deep into anything they learn but sometimes they struggle looking at the big picture during their deep dive.</h3>
+               </div>
+
+               <div id="elephant" class="learnertype">
+                <picture class="cs-image"  aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="{{url_for('static',filename='assets/Learner Types/elephant.png')}}">
+                    <source media="(min-width: 601px)" srcset="{{url_for('static',filename='assets/Learner Types/elephant.png')}}">
+                    <img loading="lazy" decoding="async" src="{{url_for('static',filename='assets/Learner Types/elephant.png')}}" alt="library" width="600" height="400">
+                </picture>
+                <h3 class="cs-text">Excellent working memory they remember everything but can have difficulties applying the knowledge due to a lack of technique and over-dependency on memorization.</h3>
+               </div>
+
+               <div id="owl" class="learnertype">
+                <picture class="cs-image"  aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="{{url_for('static',filename='assets/Learner Types/owl.jpeg')}}">
+                    <source media="(min-width: 601px)" srcset="{{url_for('static',filename='assets/Learner Types/owl.jpeg')}}">
+                    <img loading="lazy" decoding="async" src="{{url_for('static',filename='assets/Learner Types/owl.jpeg')}}" alt="library" width="600" height="400">
+                </picture>
+                <h3 class="cs-text">They have the best knowledge of metacognition techniques but due to their vast knowledge of the techniques but they can't focus on which technique to apply at the required time.</h3>
+               </div>
+
+               <div id="Dolphin" class="learnertype">
+                <picture class="cs-image"  aria-hidden="true">
+                    <source media="(max-width: 600px)" srcset="{{url_for('static',filename='assets/Learner Types/Dolphin.jpeg')}}">
+                    <source media="(min-width: 601px)" srcset="{{url_for('static',filename='assets/Learner Types/Dolphin.jpeg')}}">
+                    <img loading="lazy" decoding="async" src="{{url_for('static',filename='assets/Learner Types/Dolphin.jpeg')}}" alt="library" width="600" height="400">
+                </picture>
+                <h3 class="cs-text">They are Playful, have social interaction, and adaptability, and can learn through engagement but most of the time they lack focus or depth in learning, rely on external stimuli for motivation, and have difficulty maintaining long-term habits.</h3>
+               </div>
+
+        </div>
+        <button id="sign-up">Sign-up</button>
     </div>
+
+<!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
+<div id="lsignup">
+    <section id="contact-1150">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Contact Us</span>
+                <h2 class="cs-title">We Love to Hear from Our Happy Customers</h2>
+            </div>
+            <div class="cs-contact-group">
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/group.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/group.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/group.jpg" alt="people" width="630" height="300">
+                </picture>
+                <p class="cs-contact-text">
+                    There are many variations of passages of available but the majority have suffered alteration in some form, by injected randomized words even slightly believable.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li">
+                        <picture class="cs-icon-wrapper">
+                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-phone.svg" alt="phone icon" class="cs-icon" width="40" height="40" decoding="async">
+                        </picture>
+                        <div class="cs-flex-group">
+                            <span class="cs-header">Phone</span>
+                            <a href="tel:888-4565-789
+                            " class="cs-link">+1 (888) 4565 789
+                            </a>
+                        </div>
+                    </li>
+                    <li class="cs-li">
+                        <picture class="cs-icon-wrapper">
+                            <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mech-pin.svg" alt="address icon" class="cs-icon" width="40" height="40" decoding="async">
+                        </picture>
+                        <div class="cs-flex-group">
+                            <span class="cs-header">Address</span>
+                            <a href="" class="cs-link">2553 Woodbridge Lane, Boston Ware 120</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--Form-->
+            <form class="cs-form" id="cs-form-1150" name="Contact Form" method="post">
+                <label class="cs-label">
+                    Name
+                    <input class="cs-input" required type="text" id="name-1150" name="name" placeholder="Name">
+                </label>
+                <label class="cs-label cs-email">
+                    Email
+                    <input class="cs-input" required type="email" id="email-1150" name="email" placeholder="Email">
+                </label>
+                <label class="cs-label">
+                    Password
+                    <input class="cs-input" required type="password" id="password" name="password" placeholder="Password">
+                </label>
+                <label class="cs-label">
+                    Confirm Password
+                    <input class="cs-input" required type="password" id="password2" name="password2" placeholder="Confirm Password">
+                </label>
+                <label class="cs-label">
+                    Learner-type
+                    <input class="cs-input" required type="text" id="Learner" name="Learner" placeholder="" disabled="true">
+                </label>
+                
+                <button class="cs-button-solid cs-submit" style="color: white; background-color:#15F5BA;" type="submit">Sign up</button>
+            </form>
+            <!--Bounce Graphic-->
+            <img class="cs-graphic cs-graphic1" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/bounce.svg" alt="bounce" width="208" height="124">
+            <!--Coin Graphic-->
+            <img class="cs-graphic cs-graphic2" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/coin.svg" alt="bounce" width="205" height="161">
+        </div>
+    </section>
+</div>
     {% endblock %}
    
     

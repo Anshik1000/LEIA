@@ -79,12 +79,13 @@ const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 const signUp= document.getElementById("sign-up")
+const signUpPage = document.getElementById('lsignup')
 let currentQuestionIndex=0;
 let turtle=0;
 let elephant=0;
 let owl=0;
 let dolphin=0;
-
+let result='Dolphin';
 function startQuiz(){
     currentQuestionIndex=0
     turtle=0;
@@ -120,24 +121,39 @@ function showQuestion(){
 }
 function showResult(){
     resetState();
+    const heading= document.getElementById("result");
+    heading.innerHTML="You are:"
 
     if(turtle>Math.max(dolphin,elephant,owl) )
     {
-        questionElement.innerHTML='You are:Turtle';
+        questionElement.innerHTML='Turtle:The Deep Diver';
+        const learnertype=document.getElementById('turtle');
+        learnertype.style.display='block';
+        // for sign up
+        result = 'Turtle';
 
     }
     else if(dolphin>Math.max(elephant,owl,turtle)){
-        questionElement.innerHTML='You are:Dolphin';
+        questionElement.innerHTML='Dolphin:The Social Scholar';
+        const learnertype=document.getElementById('Dolphin');
+        learnertype.style.display='block';
+        result = 'Dolphin'; // for sign up
 
 
     }
     else if(elephant>Math.max(dolphin,owl,turtle)){
-        questionElement.innerHTML='You are:Elephant';
+        questionElement.innerHTML='Elephant:The Memory Maestro';
+        const learnertype=document.getElementById('elephant');
+        learnertype.style.display='block';
+        result = 'Elephant'; // for sign up
 
 
     }
     else if(owl>Math.max(elephant,dolphin,turtle)){
-        questionElement.innerHTML='You are:Owl';
+        questionElement.innerHTML='Owl:The Metacognitive Master';
+        const learnertype=document.getElementById('owl');
+        learnertype.style.display='block';
+        result = 'Owl'; // for sign up
 
 
     }
@@ -196,7 +212,16 @@ function selectAnswer(e){
     nextButton.style.display = "block";
     
 }
+//below function gets edited when they start signing up i.e this function should affect signup.html here result is a string which will come from showresult.
+function signupedit(){
+    const quizsection = document.getElementById('quiz');
+    quizsection.style.display = "none";
+    signUpPage.style.display = "block";
+    const Learn = document.getElementById("Learner");
+    Learn.value= result;
+    Learn.disabled=true;
 
+}
 
 nextButton.addEventListener("click",()=>{
     if(currentQuestionIndex<questions.length){
@@ -206,5 +231,7 @@ nextButton.addEventListener("click",()=>{
         signUp.style.display='block';
     }
 })
+
+signUp.addEventListener("click",signupedit)
 startQuiz()
 
