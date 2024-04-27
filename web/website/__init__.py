@@ -1,13 +1,10 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-import pymysql
-
+db = SQLAlchemy()
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY']='AKSJDHWUIAHSDKHJWIASHA'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/leia'
-    db = SQLAlchemy(app)
-    
     db.init_app(app)
     from .views import views
     from .auth import auth

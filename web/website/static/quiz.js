@@ -219,7 +219,6 @@ function signupedit(){
     signUpPage.style.display = "block";
     const Learn = document.getElementById("Learner");
     Learn.value= result;
-    Learn.disabled=true;
 
 }
 

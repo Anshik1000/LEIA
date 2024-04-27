@@ -1,7 +1,7 @@
 from flask import Blueprint,render_template,request,redirect,url_for
-from flask_sqlalchemy import SQLAlchemy
 from website.models import User
 from werkzeug.security import generate_password_hash,check_password_hash
+from . import db
 auth = Blueprint('auth',__name__)
 
 
@@ -14,7 +14,7 @@ def quiz():
         password =request.form.get('password')
         learner=request.form.get('Learner')
         email=request.form.get('email')
-        entry = User(UserName=username,Password=generate_password_hash(password,method='sha1'),LearnerType=learner,Email=email)
+        entry = User(UserName=username,Password=generate_password_hash(password,method='scrypt'),LearnerType=learner,Email=email)
         db.session.add(entry)
         db.session.commit()
         return redirect(url_for('views.home'))
