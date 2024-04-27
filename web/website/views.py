@@ -10,6 +10,3 @@ def home():
 def quiz():
     return render_template("quiz2.html")
 
-@views.route('/signup')
-def signup():
-    return render_template("signup.html")
