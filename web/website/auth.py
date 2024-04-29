@@ -12,10 +12,16 @@ def quiz():
     if(request.method=='POST'):
         username =request.form.get('username')
         password =request.form.get('password')
+        confirm_password = request.form.get('password2')
         learner=request.form.get('Learner')
         email=request.form.get('email')
-        entry = User(UserName=username,Password=generate_password_hash(password,method='scrypt'),LearnerType=learner,Email=email)
-        db.session.add(entry)
-        db.session.commit()
-        return redirect(url_for('views.homepage'))
+        if password!= confirm_password:
+            return "Passwords do not match"
+        else:
+            entry = User(UserName=username,Password=generate_password_hash(password,method='scrypt'),LearnerType=learner,Email=email)
+            db.session.add(entry)
+            db.session.commit()
+            return redirect(url_for('views.homepage'))
+
+        
     return render_template("quiz2.html")
