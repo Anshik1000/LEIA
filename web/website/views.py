@@ -10,3 +10,10 @@ def home():
 def quiz():
     return render_template("quiz2.html")
 
+@views.route('/game')
+def game():
+    return render_template('recognition.html')
+
+@views.route('/home')
+def homepage():
+    return render_template('learnerpath.html')

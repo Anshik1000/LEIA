@@ -17,5 +17,5 @@ def quiz():
         entry = User(UserName=username,Password=generate_password_hash(password,method='scrypt'),LearnerType=learner,Email=email)
         db.session.add(entry)
         db.session.commit()
-        return redirect(url_for('views.home'))
+        return redirect(url_for('views.homepage'))
     return render_template("quiz2.html")
