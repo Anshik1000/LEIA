@@ -3,6 +3,7 @@
 {%extends "layout.html"%}
     {%block body %} 
     <br>
+   
     <div class="type" id="quiz">
         <h1 class="cs-title" id="result">Learner type Quiz</h1>
         <div class="quiz">
@@ -68,9 +69,9 @@
             <div class="cs-contact-group">
                 <picture class="cs-picture">
                     <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="{{url_for('static',filename='assets/signupleia.jpg')}}">
+                    <source media="(max-width: 600px)" srcset="{{url_for('static',filename='assets/signupleia.png')}}">
                     <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="{{url_for('static',filename='assets/signupleia.jpg')}}">
+                    <source media="(min-width: 601px)" srcset="{{url_for('static',filename='assets/signupleia.png')}}">
                     <img loading="lazy" decoding="async" src="{{url_for('static',filename='assets/signupleia.jpg')}}" alt="people" width="630" height="300">
                 </picture>
                 <p class="cs-contact-text">

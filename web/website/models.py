@@ -8,3 +8,6 @@ class User(db.Model,UserMixin):
     Password = db.Column(db.String(20), nullable=False)
     LearnerType = db.Column(db.String(20), nullable=False)
     Email = db.Column(db.String(20), nullable=False)
+
+    def get_id(self):
+        return (self.UserID)

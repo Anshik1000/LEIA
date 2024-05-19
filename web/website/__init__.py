@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager
 db = SQLAlchemy()
 
 def create_app():
@@ -9,6 +10,16 @@ def create_app():
    
     
     db.init_app(app)
+    from .models import User
+    login_manager = LoginManager()
+    #where should flask redirect if user is not logged in
+    login_manager.login_view = 'views.home'
+    login_manager.init_app(app)
+
+    @login_manager.user_loader
+    def load_user(UserID):
+        return User.query.get(int(UserID))
+  
     from .views import views
     from .auth import auth
 
