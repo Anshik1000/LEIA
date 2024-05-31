@@ -22,9 +22,17 @@ def create_app():
   
     from .views import views
     from .auth import auth
+    from .turtle import turtle
+    from .dolphin import dolphin
+    from .elephant import elephant
+    from .owl import owl
 
     app.register_blueprint(views,url_prefix='/')
     app.register_blueprint(auth,url_prefix='/')
+    app.register_blueprint(turtle,url_prefix='/t')
+    app.register_blueprint(elephant,url_prefix='/e')
+    app.register_blueprint(owl,url_prefix='/o')
+    app.register_blueprint(dolphin,url_prefix='/d')
 
 
     return app

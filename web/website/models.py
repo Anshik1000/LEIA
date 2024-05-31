@@ -11,3 +11,20 @@ class User(db.Model,UserMixin):
 
     def get_id(self):
         return (self.UserID)
+
+class Turtle(db.Model):
+    LevelID = db.Column(db.Integer, primary_key=True)
+    LevelName = db.Column(db.String(50), nullable=False)
+
+class Dolphin(db.Model):
+    LevelID = db.Column(db.Integer, primary_key=True)
+    LevelName = db.Column(db.String(50), nullable=False)
+    Description = db.Column(db.String(200))
+
+class Elephant(db.Model):
+    LevelID = db.Column(db.Integer, primary_key=True)
+    LevelName = db.Column(db.String(50), nullable=False)
+
+class Owl(db.Model):
+    LevelID = db.Column(db.Integer, primary_key=True)
+    LevelName = db.Column(db.String(50), nullable=False)

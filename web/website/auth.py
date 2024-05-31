@@ -28,7 +28,7 @@ def quiz():
             user = User.query.filter_by(Email=email).first()
             login_user(user,remember=True) #creates session for the user
             flash('Account created',category='success')
-            return redirect(url_for('views.homepage'))
+            return redirect(url_for('{}.home'.format(learner.lower())))
 
         
     return render_template("quiz2.html")
@@ -42,7 +42,7 @@ def login():
          if user:
              if check_password_hash(user.Password,password):
                  login_user(user,remember=True)#creates session for the user
-                 return redirect(url_for('views.homepage'))
+                 return redirect(url_for('{}.home'.format(learner.lower())))
              else:
                 flash("Incorrect password,try again",category='error')
          else:

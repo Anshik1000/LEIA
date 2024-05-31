@@ -12,12 +12,15 @@ appli = Flask(__name__)
 @views.route('/')
 def home():
     if current_user.is_authenticated:
-          return redirect(url_for('views.homepage'))
+          return redirect(url_for('{}.home'.format(current_user.LearnerType.lower())))
     return render_template("index.html")
 
 @views.route('/quiz')
 def quiz():
     return render_template("quiz2.html")
+
+
+
 
 @views.route('/game',methods=['GET','POST'])
 @login_required
@@ -60,7 +63,8 @@ def game():
                 print(flash_message)
 
             
-        return render_template('recognition.html')
+        return render_template('Play.html')
+
 
 
 @views.route('/home')
