@@ -28,3 +28,10 @@ class Elephant(db.Model):
 class Owl(db.Model):
     LevelID = db.Column(db.Integer, primary_key=True)
     LevelName = db.Column(db.String(50), nullable=False)
+
+class Level(db.Model):
+     UserID = db.Column(db.Integer,db.ForeignKey('User.UserID'), primary_key=True)
+     LevelID = db.Column(db.Integer, primary_key=True)
+     LevelName = db.Column(db.String(256), nullable=False)
+     Progress = db.Column(db.Integer, nullable=False)
+     
